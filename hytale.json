@@ -1,0 +1,108 @@
+{
+    "type": "Hytale",
+    "id": "ca4e919a",
+    "display": "Hytale - Early Access",
+    "data": {
+        "port": {
+            "type": "string",
+            "value": "5520",
+            "display": "Game Port",
+            "desc": "On which Port the game binds to on start.",
+            "required": true,
+            "userEdit": false
+        },
+        "ram": {
+            "type": "integer",
+            "value": 4,
+            "display": "Memory (GB)",
+            "desc": "RAM the Hytale-Server is allowed to use at max in gigabytes.",
+            "required": true,
+            "userEdit": false
+        }
+    },
+    "groups": [
+        {
+            "display": "Notes",
+            "description": "Please make sure you have Java25 Installed on your Server. ",
+            "variables": [],
+            "order": 1
+        },
+        {
+            "display": "Settings",
+            "description": "",
+            "variables": [
+                "port",
+                "ram"
+            ],
+            "order": 2
+        }
+    ],
+    "install": [
+        {
+            "type": "javadl",
+            "version": "25"
+        },
+        {
+            "type": "download",
+            "files": [
+                "https://downloader.hytale.com/hytale-downloader.zip"
+            ]
+        },
+        {
+            "type": "command",
+            "commands": [
+                "sh -c 'find . -maxdepth 1 -type f -name \"*.zip\" ! -name \"Assets.zip\" -exec unzip -j {} -d ./ \\;'",
+                "rm -f ./hytale-downloader.zip",
+                "rm -f ./QUICKSTART.md",
+                "rm -f ./hytale-downloader-windows-amd64.exe"
+            ]
+        },
+        {
+            "type": "command",
+            "commands": [
+                "./hytale-downloader-linux-amd64"
+            ]
+        },
+        {
+            "type": "command",
+            "commands": [
+                "unzip -o *.zip",
+                "sh -c 'find . -maxdepth 1 -type f -name \"*.zip\" ! -name \"Assets.zip\" -exec rm -f {} \\;'",
+                "rm -f ./hytale-downloader-linux-amd64"
+            ]
+        }
+    ],
+    "uninstall": null,
+    "run": {
+        "command": "java -Xms${ram}G -jar ./Server/HytaleServer.jar --assets ./Assets.zip --bind 0.0.0.0:${port}",
+        "stopCode": 2,
+        "stdin": {
+            "type": "stdin"
+        },
+        "autostart": false,
+        "autorecover": false,
+        "autorestart": false
+    },
+    "environment": {
+        "type": "host",
+        "mounts": [],
+        "disableUnshare": false
+    },
+    "supportedEnvironments": [
+        {
+            "type": "host"
+        }
+    ],
+    "requirements": {},
+    "stats": {
+        "type": ""
+    },
+    "query": {
+        "type": ""
+    },
+    "keepAlive": {
+        "frequency": "",
+        "command": ""
+    },
+    "name": "HytaleEA"
+}
