@@ -74,7 +74,7 @@
     ],
     "uninstall": null,
     "run": {
-        "command": "java -Xms${ram}G -jar ./Server/HytaleServer.jar --assets ./Assets.zip --bind 0.0.0.0:${port}",
+        "command": "java25 -Xms${ram}G -jar ./Server/HytaleServer.jar --assets ./Assets.zip --bind 0.0.0.0:${port}",
         "stopCode": 2,
         "stdin": {
             "type": "stdin"
