@@ -3,7 +3,7 @@ This is a [PufferPanel](https://www.pufferpanel.com) Template for [Hytale](https
 
 To Install and later use the Hytale-Server you need to verify your Hytale-Account to the server twiche.
 
-First on installation the installer will ask you to log in to your account, and later after booting the Server be able to let players join you need to autentienticat it again.
+First on installation the installer will ask you to log in to your account, and later after booting the Server, to be able to let players join, you need to autentienticat it again.
 
 The Autentication of the Hytale-Server is done by the following command in the Server console:
 
