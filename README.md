@@ -16,6 +16,10 @@ The Message to Authenticate yourself will look something like this:
 ![alt text](https://github.com/YannikZocker/template_pufferpanel_hytale/blob/main/screnshot.png "Console Screnshot")
 
 
+If you dont Authenticate your Server correctily it will show you the following error:
+```
+[HandshakeHandler] Server session token not available - cannot request auth grant
+```
 # Note
 
 This is the secound Template I ever created using the web overlay, I´ve only tested it on my maschine. It may be not work as expected.
