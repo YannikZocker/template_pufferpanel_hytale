@@ -23,3 +23,5 @@ If you dont Authenticate your Server correctily it will show you the following e
 # Note
 
 This is the secound Template I ever created using the web overlay, I´ve only tested it on my maschine. It may be not work as expected.
+
+Pleas make shure you have an RC of PufferPanel 3.X Installed to use the Template or lock at the following Issue: [Issue 1](https://github.com/YannikZocker/template_pufferpanel_hytale/issues/1)
